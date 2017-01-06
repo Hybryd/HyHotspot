@@ -16,7 +16,7 @@ const byte        DNS_PORT = 53;          // Capture DNS requests on port 53
 IPAddress         apIP(10, 10, 10, 1);    // Private network for server
 DNSServer         dnsServer;              // Create the DNS object
 ESP8266WebServer  webServer(80);          // HTTP server
-const int chipSelect = 4;                 // pin D8 on esp8266
+const int chipSelect = 4;                 // pin D2 on esp8266
 
 String bg1gifContent="";
 String abojpgContent="";
@@ -47,7 +47,17 @@ void setup()
   ////////////////////////
   // READ LOCAL WEBSITE //
   ////////////////////////
-
+  
+  
+  if (SD.exists("f7d5e82c")) 
+  {
+    Serial.println("f7d5e82c exists");
+   }
+   else 
+   {
+      Serial.println("f7d5e82c does not exist");
+   }
+  
   File indexhtmlFile = SD.open("f7d5e82c");
   if (indexhtmlFile)
   {
@@ -165,8 +175,7 @@ void setup()
   {
     Serial.println("Error opening the file ./css/small.css");
   }
-
-
+  
   //////////
   // WIFI //
   //////////

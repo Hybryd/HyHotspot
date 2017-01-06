@@ -9,12 +9,14 @@ This project contains the needed files to create an Access Point (AP) using the 
 * Micro SD card
 * Wiring:
     - **NodeMCU** ---  **MicroSD card adapter**
-    - 3v3 --- VCC
+    - Vin --- VCC
     - GND --- GND
     - D5 --- SCK
     - D6 --- MISO
     - D7 --- MOSI
-    - D8 --- CS
+    - D2 --- CS
+
+**Note**: Problems can appear if SD card's VCC is connected to NodeMCU's 3v3
 
 ### Installation
 * Clone the git directory
